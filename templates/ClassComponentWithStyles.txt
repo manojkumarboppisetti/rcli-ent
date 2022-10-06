@@ -1,0 +1,21 @@
+import "./_COMPONENT_NAME_PLACEHOLDER_.scss";
+import {Component} from "react";
+
+interface _COMPONENT_NAME_PLACEHOLDER_Props {
+}
+
+interface _COMPONENT_NAME_PLACEHOLDER_State {
+}
+
+class _COMPONENT_NAME_PLACEHOLDER_ extends Component<_COMPONENT_NAME_PLACEHOLDER_Props, _COMPONENT_NAME_PLACEHOLDER_State> {
+
+    render() {
+        return (
+             <div className={'_COMPONENT_NAME_PLACEHOLDER_'}>
+                <div>_COMPONENT_NAME_PLACEHOLDER_</div>
+            </div>
+        );
+    }
+}
+
+export default _COMPONENT_NAME_PLACEHOLDER_;

@@ -1,0 +1,17 @@
+import "./_COMPONENT_NAME_PLACEHOLDER_.scss";
+
+interface _COMPONENT_NAME_PLACEHOLDER_Props {
+
+}
+
+const _COMPONENT_NAME_PLACEHOLDER_ = (props: _COMPONENT_NAME_PLACEHOLDER_Props) => {
+
+    return (
+        <div className={'_COMPONENT_NAME_PLACEHOLDER_'}>
+            <div>_COMPONENT_NAME_PLACEHOLDER_</div>
+        </div>
+    );
+
+};
+
+export default _COMPONENT_NAME_PLACEHOLDER_;
