@@ -10,7 +10,7 @@
   "author": "Manoj varma",
   "license": "MIT",
   "bin": {
-    "rct": "bin/cli.js"
+    "rcst": "bin/cli.js"
   },
   "repository": {
     "type": "git",

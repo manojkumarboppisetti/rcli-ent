@@ -5,7 +5,7 @@ const { createFile } = require("./files.utils");
 const COMPONENT_PLACEHOLDER = "_COMPONENT_NAME_PLACEHOLDER_";
 const TEMPLATES_DIRECTORY = './../templates';
 
-const generateComponent = (directoryName, componentName, type, skipStyles = false, isScreen = false) => {
+const generateComponent = (directoryName, componentName, type, styles, skipStyles = false, isScreen = false) => {
 
     const componentNameBits = componentName.split('-');
     let componentFormattedName = "";
@@ -27,14 +27,17 @@ const generateComponent = (directoryName, componentName, type, skipStyles = fals
             if (type === "class"){
                 TSXBoilerPlateCode = await fs.readFile(path.join(__dirname, TEMPLATES_DIRECTORY, 'ClassComponentWithStyles.txt'), 'utf8');
             }
-            const SCSSBoilerPlateCode = await fs.readFile(path.join(__dirname, TEMPLATES_DIRECTORY, "SCSS.txt"), 'utf8');
+            if (styles === "css"){
+                TSXBoilerPlateCode = TSXBoilerPlateCode.replaceAll("scss", "css");
+            }
+            const SCSSBoilerPlateCode = await fs.readFile(path.join(__dirname, TEMPLATES_DIRECTORY, "Styles.txt"), 'utf8');
             const UpdatedTSXBoilerPlateCode = TSXBoilerPlateCode.replaceAll(COMPONENT_PLACEHOLDER, componentFormattedName);
-            await createFile(`${directoryName}/${componentFormattedName}.tsx`, UpdatedTSXBoilerPlateCode);
-            await createFile(`${directoryName}/${componentFormattedName}.scss`, SCSSBoilerPlateCode).then(()=>{
+            await createFile(`${directoryName}/${componentFormattedName}.tsx`, UpdatedTSXBoilerPlateCode).then(()=>{
                 console.log(directoryName + " component created successfully");
             }).catch((error)=>{
                 console.log("failed to create a component ", error);
             });
+            await createFile(`${directoryName}/${componentFormattedName}.${styles}`, SCSSBoilerPlateCode);
         } else {
             let TSXBoilerPlateCode = await fs.readFile(path.join(__dirname, TEMPLATES_DIRECTORY, "FunctionalComponent.txt"), 'utf8');
             if (type === "class"){
