@@ -16,7 +16,7 @@ const componentPath = options?.componentName;
 const skipStyles = options?.skipStyles;
 const isScreen = options?.isScreen;
 const type = options?.type && ['class', 'functional'].includes(options.type) ? options?.type : "functional";
-const styles = options?.style && ['scss', 'css'].includes(options.styles) ? options?.styles : "scss";
+const styles = options?.styles && ['scss', 'css'].includes(options.styles) ? options?.styles : "scss";
 let componentName = '';
 let directoryName = '';
 

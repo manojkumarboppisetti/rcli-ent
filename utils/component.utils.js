@@ -33,11 +33,15 @@ const generateComponent = (directoryName, componentName, type, styles, skipStyle
             const SCSSBoilerPlateCode = await fs.readFile(path.join(__dirname, TEMPLATES_DIRECTORY, "Styles.txt"), 'utf8');
             const UpdatedTSXBoilerPlateCode = TSXBoilerPlateCode.replaceAll(COMPONENT_PLACEHOLDER, componentFormattedName);
             await createFile(`${directoryName}/${componentFormattedName}.tsx`, UpdatedTSXBoilerPlateCode).then(()=>{
-                console.log(directoryName + " component created successfully");
+                console.log(`Component ${directoryName}/${componentFormattedName}.tsx` + " created successfully");
             }).catch((error)=>{
                 console.log("failed to create a component ", error);
             });
-            await createFile(`${directoryName}/${componentFormattedName}.${styles}`, SCSSBoilerPlateCode);
+            await createFile(`${directoryName}/${componentFormattedName}.${styles}`, SCSSBoilerPlateCode).then(()=>{
+                console.log(`Component ${directoryName}/${componentFormattedName}.${styles}` + " created successfully");
+            }).catch((error)=>{
+                console.log("failed to create a component ", error);
+            });
         } else {
             let TSXBoilerPlateCode = await fs.readFile(path.join(__dirname, TEMPLATES_DIRECTORY, "FunctionalComponent.txt"), 'utf8');
             if (type === "class"){
