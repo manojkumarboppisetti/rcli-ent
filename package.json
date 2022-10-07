@@ -1,12 +1,22 @@
 {
   "name": "rcli-ent",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "CLI tool to generate React components in simple way",
   "main": "bin/cli.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["react", "rcli-ent", "react-cli", "scaffold" , "cli", "bolier plate", "react.js", "javascript", "typescript"],
+  "keywords": [
+    "react",
+    "rcli-ent",
+    "react-cli",
+    "scaffold",
+    "cli",
+    "bolier plate",
+    "react.js",
+    "javascript",
+    "typescript"
+  ],
   "author": "Manoj varma",
   "license": "MIT",
   "bin": {
