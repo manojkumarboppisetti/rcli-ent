@@ -1,14 +1,38 @@
 # rcli-ent
  react cli to generate boiler plate codes for the components
 
-Usage:
+------------------------
 
-1. Install it globally: `npm install -g  rcli-ent`.
-2. Run the command inside your React.JS project to auto generate component like below. <br/>
+### Usage:
+
+1. Install it globally: ```npm install -g  rcli-ent``` / ```yarn add -g  rcli-ent```.
+2. Run the below command in the terminal inside your React.JS project. <br/>
     Syntax: rct -c ComponentName <br/>
-    Ex1: rct -c profile <br/>
-    Ex2: rct -c app/dashboard <br/>
-    Ex3: rct -c app/dashboard --skipStyles <br/>
-    Ex4: rct -c app/dashboard --skipStyles --type=class <br/>
+    Example: rct -c profile <br/>
+    Sample output: <br/>
+      &nbsp;&nbsp;&nbsp; Component profile/ProfileComponent.tsx created successfully <br/>
+      &nbsp;&nbsp;&nbsp; Component profile/ProfileComponent.scss created successfully <br/>
 
-Note: Component path name could be nested folder path to create component in a nested folder
+----
+
+### Available options
+
+You can use bellow options to customise.
+
+| Attribute     | Type    | Options           | Default Value | Description                                                                                                   |
+|---------------|---------|-------------------|---------------|--------------------------------------------------|
+| --skipStyles  | boolean | true, false       | false         | by default component created with style sheet. pass `false` to override                                       |
+| --type        | string  | functional, class | functional    | to generate functional or class component                                                                     |
+| --isScreen    | boolean | true, false       | false         | set to `true` if you want to create file with Screen as extension rather than Component Ex: ProfileScreen.tsx |
+| --styles      | string  | scss, css         | scss          | to set style whether to use scss or css                                                                       |
+
+
+Note: Component path name could be nested folder path to create component in a nested folder. <br/>
+Example:  ```rct -c src/profile/change-password``` <br/>
+Output: <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Component `src/profile/change-password/ChangePasswordComponent.tsx` created successfully. <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Component `src/profile/change-password/ChangePasswordComponent.scss` created successfully. <br/> 
+
+## License
+
+MIT Licensed. Copyright (c) Manoj varma 2022.
