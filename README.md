@@ -30,8 +30,8 @@ You can use bellow options to customise.
 Note: Component path name could be nested folder path to create component in a nested folder. <br/>
 Example:  ```rct -c src/profile/change-password``` <br/>
 Output: <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Component `src/profile/change-password/ChangePasswordComponent.tsx` created successfully. <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Component `src/profile/change-password/ChangePasswordComponent.scss` created successfully. <br/> 
+Component `src/profile/change-password/ChangePasswordComponent.tsx` created successfully. <br/>
+Component `src/profile/change-password/ChangePasswordComponent.scss` created successfully. <br/> 
 
 ## License
 

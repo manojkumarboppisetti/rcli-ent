@@ -1,6 +1,6 @@
 {
   "name": "rcli-ent",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "CLI tool to generate React components in simple way",
   "main": "bin/cli.js",
   "scripts": {
