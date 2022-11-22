@@ -7,6 +7,7 @@ const options = yargs
     .usage("Usage: -c <componentName>")
     .option("c", { alias: "componentName", describe: "Component name", type: "string", demandOption: true })
     .option("--type", { alias: "type", describe: "", type: "string", demandOption: false })
+    .option("--camelCase", { alias: "camelCase", describe: "", type: "boolean", demandOption: false })
     .option("--styles", { alias: "styles", describe: "", type: "string", demandOption: false })
     .option("--skipStyles", { alias: "skipStyles", describe: "", type: "boolean", demandOption: false })
     .option("--isScreen", { alias: "isScreen", describe: "", type: "boolean", demandOption: false })
@@ -15,6 +16,7 @@ const options = yargs
 const componentPath = options?.componentName;
 const skipStyles = options?.skipStyles;
 const isScreen = options?.isScreen;
+const isCamelCase = options?.camelCase;
 const type = options?.type && ['class', 'functional'].includes(options.type) ? options?.type : "functional";
 const styles = options?.styles && ['scss', 'css'].includes(options.styles) ? options?.styles : "scss";
 let componentName = '';
@@ -30,4 +32,4 @@ if (componentPathBits.length > 1) { // nested folders structure
     directoryName = componentPath;
 }
 
-generateComponent(directoryName, componentName, type, styles, skipStyles, isScreen);
+generateComponent(directoryName, componentName, type, styles, skipStyles, isScreen, isCamelCase);

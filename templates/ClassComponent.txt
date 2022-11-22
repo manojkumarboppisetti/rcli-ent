@@ -10,7 +10,7 @@ class _COMPONENT_NAME_PLACEHOLDER_ extends Component<_COMPONENT_NAME_PLACEHOLDER
 
     render() {
         return (
-             <div className={'_COMPONENT_NAME_PLACEHOLDER_'}>
+             <div className={'_COMPONENT_CSS_CLASS_NAME_PLACEHOLDER_'}>
                 <div>_COMPONENT_NAME_PLACEHOLDER_</div>
             </div>
         );

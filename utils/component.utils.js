@@ -3,23 +3,35 @@ const path = require('path');
 const { createFile } = require("./files.utils");
 
 const COMPONENT_PLACEHOLDER = "_COMPONENT_NAME_PLACEHOLDER_";
+const COMPONENT_CSS_CLASS_NAME_PLACEHOLDER = "_COMPONENT_CSS_CLASS_NAME_PLACEHOLDER_";
 const TEMPLATES_DIRECTORY = './../templates';
 
-const generateComponent = (directoryName, componentName, type, styles, skipStyles = false, isScreen = false) => {
+const generateComponent = (directoryName, componentName, type, styles, skipStyles = false, isScreen = false, isCamelCase=false) => {
+
+    console.log(isCamelCase);
 
     const componentNameBits = componentName.split('-');
     let componentFormattedName = "";
-    componentNameBits.forEach((bit) => {
+    let componentCssClassName = componentName;
+    componentNameBits.forEach((bit, index) => {
         if (bit.length > 0) {
-            componentFormattedName += bit[0].toUpperCase() + bit.slice(1);
+            if (isCamelCase && index === 0){
+                componentFormattedName += bit[0].toLowerCase() + bit.slice(1);
+            } else {
+                componentFormattedName += bit[0].toUpperCase() + bit.slice(1);
+            }
         }
     });
 
     if (isScreen) {
         componentFormattedName += "Screen";
+        componentCssClassName += "-screen"
     } else {
         componentFormattedName += "Component";
+        componentCssClassName += "-component";
     }
+    
+    console.log(componentCssClassName, "componentCssClassName");
 
     (async () => {
         if (!skipStyles) {
@@ -31,7 +43,8 @@ const generateComponent = (directoryName, componentName, type, styles, skipStyle
                 TSXBoilerPlateCode = TSXBoilerPlateCode.replaceAll("scss", "css");
             }
             const SCSSBoilerPlateCode = await fs.readFile(path.join(__dirname, TEMPLATES_DIRECTORY, "Styles.txt"), 'utf8');
-            const UpdatedTSXBoilerPlateCode = TSXBoilerPlateCode.replaceAll(COMPONENT_PLACEHOLDER, componentFormattedName);
+            let UpdatedTSXBoilerPlateCode = TSXBoilerPlateCode.replaceAll(COMPONENT_PLACEHOLDER, componentFormattedName);
+            UpdatedTSXBoilerPlateCode = UpdatedTSXBoilerPlateCode.replaceAll(COMPONENT_CSS_CLASS_NAME_PLACEHOLDER, componentCssClassName);
             await createFile(`${directoryName}/${componentFormattedName}.tsx`, UpdatedTSXBoilerPlateCode).then(()=>{
                 console.log(`Component ${directoryName}/${componentFormattedName}.tsx` + " created successfully");
             }).catch((error)=>{
