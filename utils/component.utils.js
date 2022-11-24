@@ -7,9 +7,6 @@ const COMPONENT_CSS_CLASS_NAME_PLACEHOLDER = "_COMPONENT_CSS_CLASS_NAME_PLACEHOL
 const TEMPLATES_DIRECTORY = './../templates';
 
 const generateComponent = (directoryName, componentName, type, styles, skipStyles = false, isScreen = false, isCamelCase=false) => {
-
-    console.log(isCamelCase);
-
     const componentNameBits = componentName.split('-');
     let componentFormattedName = "";
     let componentCssClassName = componentName;
@@ -22,7 +19,6 @@ const generateComponent = (directoryName, componentName, type, styles, skipStyle
             }
         }
     });
-
     if (isScreen) {
         componentFormattedName += "Screen";
         componentCssClassName += "-screen"
@@ -30,9 +26,6 @@ const generateComponent = (directoryName, componentName, type, styles, skipStyle
         componentFormattedName += "Component";
         componentCssClassName += "-component";
     }
-    
-    console.log(componentCssClassName, "componentCssClassName");
-
     (async () => {
         if (!skipStyles) {
             let TSXBoilerPlateCode = await fs.readFile(path.join(__dirname, TEMPLATES_DIRECTORY, 'FunctionalComponentWithStyles.txt'), 'utf8');

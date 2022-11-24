@@ -19,13 +19,13 @@
 
 You can use bellow options to customise.
 
-| Attribute    | Type    | Options           | Default Value | Description                                                                                                   |
-|--------------|---------|-------------------|---------------|---------------------------------------------------------------------------------------------------------------|
-| --skipStyles | boolean | true, false       | false         | by default component created with style sheet. pass `false` to override                                       |
-| --type       | string  | functional, class | functional    | to generate functional or class component                                                                     |
-| --isScreen   | boolean | true, false       | false         | set to `true` if you want to create file with Screen as extension rather than Component Ex: ProfileScreen.tsx |
-| --styles     | string  | scss, css         | scss          | to set style whether to use scss or css                                                                       |
-| --camelCase  | boolean | true, false       | false         | to create component with camel casing                                                                         |
+| Attribute    | Type    | Options           | Default Value | Description                                                                                                   | Example                           |
+|--------------|---------|-------------------|---------------|---------------------------------------------------------------------------------------------------------------|-----------------------------------|
+| --skipStyles | boolean | true, false       | false         | by default component created with style sheet. pass `false` to override                                       | ```rct -c profile --skipStyles``` |
+| --type       | string  | functional, class | functional    | to generate functional or class component                                                                     | ```rct -c profile --type=class``` |
+| --isScreen   | boolean | true, false       | false         | set to `true` if you want to create file with Screen as extension rather than Component Ex: ProfileScreen.tsx | ```rct -c profile --isScreen```   |
+| --styles     | string  | scss, css         | scss          | to set style whether to use scss or css                                                                       | ```rct -c profile --styles=css``` |
+| --camelCase  | boolean | true, false       | false         | to create component with camel casing                                                                         | ```rct -c profile --camelCase```  |
 
 
 Note: Component path name could be nested folder path to create component in a nested folder. <br/>
