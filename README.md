@@ -23,7 +23,6 @@ You can use bellow options to customise.
 |--------------|---------|-------------------|---------------|---------------------------------------------------------------------------------------------------------------|-----------------------------------|
 | --skipStyles | boolean | true, false       | false         | by default component created with style sheet. pass `false` to override                                       | ```rct -c profile --skipStyles``` |
 | --type       | string  | functional, class | functional    | to generate functional or class component                                                                     | ```rct -c profile --type=class``` |
-| --isScreen   | boolean | true, false       | false         | set to `true` if you want to create file with Screen as extension rather than Component Ex: ProfileScreen.tsx | ```rct -c profile --isScreen```   |
 | --styles     | string  | scss, css         | scss          | to set style whether to use scss or css                                                                       | ```rct -c profile --styles=css``` |
 | --camelCase  | boolean | true, false       | false         | to create component with camel casing                                                                         | ```rct -c profile --camelCase```  |
 
@@ -36,4 +35,4 @@ Component `src/profile/change-password/ChangePasswordComponent.scss` created suc
 
 ## License
 
-MIT Licensed. Copyright (c) Manoj varma 2022.
+MIT Licensed. Copyright (c) Manoj varma 2023.
